@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Created on: Nov-2018
+// Created by: Christian Briglio 
+// Created for: ICS3U
+// This program shows users full adress based off the data the user inputs 
+
+func showAdress(appartmentNumberSent : Int = 0, streetNumberSent : Int, streetNameSent : String, citySent : String, provinceSent : String, postalCodeSent : String) {
+    
+    // check if there was appartment number 
+    if appartmentNumberEntered == false {
+        show("\(streetNumberSent) \(streetNameSent), \(citySent), \(provinceSent), \(postalCodeSent)")
+    } else {
+        show("\(appartmentNumberSent)-\(streetNumberSent) \(streetNameSent), \(citySent), \(provinceSent), \(postalCodeSent)")
+    }
+    
+    
+}
+
+var appartmentNumberEntered = false
+var appartmentNumber : Int? = nil
+
+show("Do you have an appartment number? (y/n)")
+let choice = askForChoice(options: ["Yes", "No"])
+// check if y was entered 
+if choice == "Yes" || choice == "No" {
+    if choice == "Yes" {
+        // get appartment number
+        show("Enter appartment number")
+         appartmentNumber = askForNumber()
+        appartmentNumberEntered = true
+    } 
+    // get street number 
+    show("Enter street number")
+    let streetNumber : Int = askForNumber()
+    // get street name
+    show("Enter street name")
+    let streetName : String = ask()
+    // get city
+    show("Enter city")
+    let city : String = ask()
+    // get privince
+    show("Enter province")
+    let province : String = ask()
+    // get postal code
+    show("Enter postal code ")
+    let postalCode : String = ask()
+    if appartmentNumberEntered == true {
+        showAdress(appartmentNumberSent: appartmentNumber!, streetNumberSent: streetNumber, streetNameSent: streetName, citySent: city, provinceSent: province, postalCodeSent: postalCode)
+    } else {
+        showAdress(streetNumberSent: streetNumber, streetNameSent: streetName, citySent: city, provinceSent: province, postalCodeSent: postalCode)
+    }
+} else {
+    show("You didnt enter y or n")
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{145, 1971}</string>
+			<key>OriginalContent</key>
+			<string>show("What is your name?")
+
+let name = ask("Name")
+
+show("Hi " + name)
+
+</string>
+			<key>OriginalRange</key>
+			<string>{145, 72}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Answers.playgroundchapter/Pages/Text.playgroundpage/Contents.swift</string>
+</dict>
+</plist>
